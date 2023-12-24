@@ -1,0 +1,222 @@
+/* Reset Styles */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
+}
+
+/* Body Styles */
+body {
+  font-family: Inter, sans-serif;
+  padding: 0 calc(8px + 1.5625vw) 0 calc(8px + 1.5625vw);
+}
+
+/* Header Styles */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+
+/* Footer Styles */
+footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  background-color: white;
+}
+
+/* Main Content Styles */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Menu Styles */
+.main-menu,
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.main-menu,
+li {
+  padding: 15px 15px 15px 0;
+  list-style: none;
+  font-size: 1.6rem;
+}
+
+.main-menu,
+a {
+  text-decoration: none;
+  color: #231f20;
+  letter-spacing: 1px;
+}
+
+#menu-item1 {
+  font-size: 1.68rem;
+  font-weight: 700;
+}
+
+#mobile-menu {
+  display: none;
+  width: 100%;
+}
+
+/* Link Styles */
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: rgb(155, 155, 155);
+}
+
+/* Grid Styles */
+.grid1,
+.grid2,
+.grid3 {
+  display: grid;
+  column-gap: calc(8px + 1.5625vw);
+  grid-template-columns: 1fr 1fr 1fr; /* Added this line to define three columns */
+  margin-bottom: calc(8px + 1.5625vw);
+}
+
+.main1,
+.side1,
+.main2,
+.side2,
+.main3,
+.side3,
+.middle3 {
+  background: #231f20;
+  color: white;
+  padding: 2%;
+}
+
+.main1,
+.side1,
+.side2,
+.middle3 {
+  height: 430px;
+}
+
+.main1 {
+  grid-column: span 2;
+}
+
+.side2 {
+  grid-column: span 2;
+}
+
+/* Socials Styles */
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.socials li {
+  font-size: 1.2rem;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #000000;
+  padding: 1%;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color 0.4s ease;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  display: none; /* Hide the mobile menu by default */
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobile-menu li {
+  padding: 15px 0; /* Adjust padding for mobile menu items */
+}
+
+.header-link {
+  display: none; /* Initially hide header links on smaller screens */
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 768px) {
+  #menu-principal {
+    display: none; /* Hide the desktop menu on smaller screens */
+  }
+
+  #mobile-menu {
+    display: flex; /* Show the mobile menu on smaller screens */
+  }
+
+  /* Style to show only the word "Menu" */
+  #mobile-menu:empty::before {
+    content: "Menu";
+    padding: 15px 0; /* Adjust padding for the "Menu" text */
+  }
+
+  .header-link {
+    display: block; /* Display header links on smaller screens */
+  }
+
+  /* Initially hide header links on smaller screens when mobile menu is closed */
+  #mobile-menu:not(.mobile-menu) .header-link {
+    display: none;
+  }
+
+  .grid1,
+  .grid2,
+  .grid3 {
+    grid-template-columns: 1fr;
+    height: calc(
+      100vw - 20px
+    ); /* Set height as 50vw (viewport width) minus 20px for gap */
+  }
+
+  .main1,
+  .side1,
+  .main2,
+  .side2,
+  .main3,
+  .side3,
+  .middle3 {
+    height: auto;
+  }
+
+  .main1,
+  .side1,
+  .side2,
+  .middle3 {
+    height: auto;
+  }
+
+  .main1 {
+    grid-column: span 1;
+  }
+
+  .side2 {
+    grid-column: span 1;
+  }
+
+  .socials li {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,40 @@
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* make a grid */
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 20px;
+}
+
+.wrapper > * {
+  background-color: #444;
+  color: #fff;
+  padding: 2%;
+  height: 230px;
+}
+
+/** mobile **/
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    height: auto;
+  }
+
+  /* make a grid */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article,
+  aside {
+    margin-bottom: 20px;
+  }
+}
